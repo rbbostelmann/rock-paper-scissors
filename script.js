@@ -25,7 +25,7 @@ let playerSelection = userInput.charAt(0).toUpperCase() + userInput.slice(1).toL
 ///ALL ABOVE WORKING FINE
 
 
-//Function that playes one match and gives the result.
+//Function that plays one match and gives the result.
 function playMatch(playerSelection, computerSelection) {
     if (playerSelection !== "Rock" && playerSelection !== "Paper" &&
         playerSelection !== "Scissors") {

@@ -33,11 +33,9 @@ function playMatch(playerSelection, computerSelection) {
         return outcomes.Messages.invalid;
     } else if (outcomes[playerSelection].weakTo === computerSelection) {
         playerLosses++;
-        gameOver();
         return outcomes.Messages.loss
     } else if (outcomes[playerSelection].strongAgainst === computerSelection) {
         playerWins++;
-        gameOver();
         return outcomes.Messages.win
     } else {
         numberTies++;
@@ -56,13 +54,10 @@ function playGame() {
 }
 
 //Not working as intended; instead of getting me/pc to 5 wins it plays only five games total
+//UPDATE: it wasn working at all, needs rework.
 function gameOver() {
 
-    if (playerWins >= 5) {
-        return "You completely destroyed the machine."
-    } else if (playerLosses >= 5) {
-        return "The computer dominated you.";
-    }
+
 }
 
 //Only triggering on the first set of inputs (debug)

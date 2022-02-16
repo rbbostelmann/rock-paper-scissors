@@ -43,6 +43,7 @@ function playMatch(playerSelection, computerSelection) {
     }
 }
 
+//Still not quite sure how this worked but yay?
 function playGame() {
     for (let i = 0; i < maxMatches; i++) {
         computerSelection = choices[Math.floor(Math.random() * choices.length)];
@@ -55,12 +56,9 @@ function playGame() {
 
 //Not working as intended; instead of getting me/pc to 5 wins it plays only five games total
 //UPDATE: it wasn working at all, needs rework.
-function gameOver() {
+function gameOver() {}
 
-
-}
-
-//Only triggering on the first set of inputs (debug)
+//Only triggering on the first set of inputs || REWORK
 console.log(`You played: ${playerSelection}`)
 console.log(`The computer played: ${computerSelection}`)
 
@@ -71,3 +69,18 @@ console.log(`You won ${playerWins} time(s).
 The computer won ${playerLosses} time(s). 
 There was/were ${numberTies} tie(s).
 There was/were ${invalidInputs} invalid input(s).`)
+
+//Informs the user of the final results. The last one is only a failsafe. 
+function whoWon() {
+    if (playerWins > playerLosses) {
+        console.log("Congrats, you've won!")
+    } else if (playerLosses > playerWins) {
+        console.log("Such a shame, you lost!")
+    } else if (playerWins === playerLosses) {
+        console.log("You tied. Try again!")
+    } else {
+        console.log("Oh, well, invalid inputs are your fault, the computer wins!")
+    }
+}
+
+whoWon();

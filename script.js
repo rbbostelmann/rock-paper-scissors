@@ -73,13 +73,13 @@ There was/were ${invalidInputs} invalid input(s).`)
 //Informs the user of the final results. The last one is only a failsafe. 
 function whoWon() {
     if (playerWins > playerLosses) {
-        console.log("Congrats, you've won!")
+        alert("Congrats, you've won!")
     } else if (playerLosses > playerWins) {
-        console.log("Such a shame, you lost!")
+        alert("Such a shame, you lost!")
     } else if (playerWins === playerLosses) {
-        console.log("You tied. Try again!")
+        alert("You tied. Try again!")
     } else {
-        console.log("Oh, well, invalid inputs are your fault, the computer wins!")
+        alert("Oh, well, invalid inputs are your fault, the computer wins!")
     }
 }
 

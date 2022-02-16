@@ -61,7 +61,7 @@ function gameOver() {
     if (playerWins >= 5) {
         return "You completely destroyed the machine."
     } else if (playerLosses >= 5) {
-        return "The computer absolutely dominated you.";
+        return "The computer dominated you.";
     }
 }
 
@@ -74,5 +74,5 @@ playGame();
 //Working just fine
 console.log(`You won ${playerWins} time(s).
 The computer won ${playerLosses} time(s). 
-There were ${numberTies} tie(s).
-There were ${invalidInputs} invalid input(s).`)
+There was/were ${numberTies} tie(s).
+There was/were ${invalidInputs} invalid input(s).`)

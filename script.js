@@ -46,14 +46,18 @@ function playMatch(playerSelection, computerSelection) {
 //Still not quite sure how this worked but yay?
 function playGame() {
     for (let i = 0; i < maxMatches; i++) {
-        computerSelection = choices[Math.floor(Math.random() * choices.length)];
-        let userInput = prompt("Pick rock, paper or scissors: ");
-        let playerSelection = userInput.charAt(0).toUpperCase() + userInput.slice(1).toLowerCase();
+        choiceReset();
         playMatch(playerSelection, computerSelection);
         console.log(`You played: ${playerSelection}`)
         console.log(`The computer played: ${computerSelection}`)
     }
 
+}
+
+function choiceReset() {
+    computerSelection = choices[Math.floor(Math.random() * choices.length)];
+    let userInput = prompt("Pick rock, paper or scissors: ");
+    let playerSelection = userInput.charAt(0).toUpperCase() + userInput.slice(1).toLowerCase();
 }
 
 playGame();

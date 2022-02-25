@@ -2,6 +2,55 @@
 let playerWins = 0;
 let playerLosses = 0;
 let numberTies = 0;
+let playedMatches = 0;
+const maxMatches = 5;
+
+
+//Array with possible choices
+const choices = ["Rock", "Paper", "Scissors"];
+
+//Random choice for the computer
+let computerSelection = choices[Math.floor(Math.random() * choices.length)];
+
+//Possible outcomes
+const outcomes = {
+    rock: { weakTo: "Paper", strongAgainst: "Scissors" },
+    paper: { weakTo: "Scissors", strongAgainst: "Rock" },
+    scissors: { weakTo: "Rock", strongAgainst: "Paper" },
+    Messages: { win: "You win!", loss: "The computer wins!", tie: "It's a tie!" }
+};
+
+
+
+
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+        if (outcomes[button.className].weakTo === computerSelection) {
+            playerLosses++;
+            playedMatches++;
+            console.log(outcomes.Messages.loss);
+        } else if (outcomes[button.className].strongAgainst === computerSelection) {
+            playerWins++;
+            playedMatches++;
+            console.log(outcomes.Messages.win);
+        } else {
+            numberTies++;
+            playedMatches++;
+            console.log(outcomes.Messages.tie)
+        }
+    })
+})
+console.log(playedMatches)
+
+
+
+
+/* //Some global variables we'll need
+let playerWins = 0;
+let playerLosses = 0;
+let numberTies = 0;
 let invalidInputs = 0;
 const maxMatches = 5;
 
@@ -81,4 +130,4 @@ function whoWon() {
     }
 }
 
-whoWon();
+whoWon(); */
